@@ -1,6 +1,6 @@
-package dev.rosewood.myplugin.manager;
+package dev.oribuin.chatfaq.manager;
 
-import dev.rosewood.myplugin.command.command.ExampleCommand;
+import dev.oribuin.chatfaq.command.command.BaseCommand;
 import dev.rosewood.rosegarden.RosePlugin;
 import dev.rosewood.rosegarden.command.framework.BaseRoseCommand;
 import dev.rosewood.rosegarden.manager.AbstractCommandManager;
@@ -17,7 +17,7 @@ public class CommandManager extends AbstractCommandManager {
 
     @Override
     public @NotNull List<Function<RosePlugin, BaseRoseCommand>> getRootCommands() {
-        return List.of(ExampleCommand::new);
+        return List.of(BaseCommand::new);
     }
 
 }

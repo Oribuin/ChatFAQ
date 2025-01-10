@@ -1,29 +1,47 @@
 # Plugin Message Prefix
-prefix: '&7[<g:#8A2387:#E94057:#F27121>{{PLUGIN_NAME}}&7] '
+prefix: '<g:#0d810b:#16d812:#0d810b>&lFAQ &8| &f'
 
 # Generic Command Messages
-no-permission: '&cYou don''t have permission for that!'
-only-player: '&cThis command can only be executed by a player.'
-unknown-command: '&cUnknown command, use &b/%cmd% help &cfor more info.'
-unknown-command-error: '&cAn unknown error occurred; details have been printed to console. Please contact a server administrator.'
-invalid-subcommand: '&cInvalid subcommand.'
-invalid-argument: '&cInvalid argument: %message%.'
-invalid-argument-null: '&cInvalid argument: %name% was null.'
-missing-arguments: '&cMissing arguments, &b%amount% &crequired.'
-missing-arguments-extra: '&cMissing arguments, &b%amount%+ &crequired.'
+no-permission: 'You don''t have permission for that!'
+only-player: 'This command can only be executed by a player.'
+unknown-command: 'Unknown command, use &#16D812/%cmd% &f&fhelp for more info.'
+unknown-command-error: 'An unknown error occurred; details have been printed to console. Please contact a server administrator.'
+invalid-subcommand: 'Invalid subcommand.'
+invalid-argument: 'Invalid argument: %message%.'
+invalid-argument-null: 'Invalid argument: %name% &fwas null.'
+missing-arguments: 'Missing arguments, &#16D812%amount% &f&frequired.'
+missing-arguments-extra: 'Missing arguments, &#16D812%amount%+ &frequired.'
+
+# Plugin Messages
+question-answer-duplicate:
+  - '&fIt seems you have asked this question recently, Here is the answer!'
+  - '&f'
+  - '&f"%answer%"'
+question-answer-found:
+  - '&fWe have found the answer to your question'
+  - '&f"&#16D812%question%&f"'
+  - ''
+  - '&f"%answer%"'
 
 # Base Command Message
-base-command-color: '&e'
-base-command-help: '&eUse &b/%cmd% help &efor command information.'
+base-command-color: ''
+base-command-help: 'Use &#16D812/%cmd% &fhelp for command information.'
 
 # Help Command
 command-help-description: 'Displays the help menu... You have arrived'
-command-help-title: '&eAvailable Commands:'
-command-help-list-description: '&8 - &d/%cmd% %subcmd% %args% &7- %desc%'
-command-help-list-description-no-args: '&8 - &d/%cmd% %subcmd% &7- %desc%'
+command-help-title: 'Available Commands:'
+command-help-list-description: '&8 - &#16D812/%cmd% &f%subcmd% &f%args% &f&7- %desc%'
+command-help-list-description-no-args: '&8 - &#16D812/%cmd% &f%subcmd% &f&7- %desc%'
 
-# Example Command
-command-example-description: 'An example command'
+# Reload COmmand
+command-reload-description: 'Reload plugin configuration files'
+command-reload-reloaded: 'Configuration and locale files were reloaded'
 
-# Argument Handler Error Messages
-argument-handler-material: 'Material [%input%] does not exist'
+# Test Command
+command-test-description: 'Checks if a specified input matches any loaded questions'
+command-test-invalid: 'We could not find your specified question.'
+command-test-found:
+  - '&fTested your input, found the question '
+  - '&f"&#16D812%question%&f"'
+  - ''
+  - '&f"%answer%"'

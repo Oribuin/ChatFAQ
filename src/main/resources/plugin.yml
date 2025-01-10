@@ -1,6 +1,10 @@
-name: MyPlugin
-main: dev.rosewood.myplugin.MyPlugin
+name: ChatFAQ
+main: dev.oribuin.chatfaq.ChatFAQPlugin
 version: '@version@'
-api-version: '1.16'
-author: Rosewood-Development
-description: A plugin that does stuff
+api-version: '1.19'
+author: Oribuin
+description: reduce chat spam with repetitive questions from new players
+permissions:
+  chatfaq.bypass:
+    description: Bypasses the check for all faq questions
+    default: false

@@ -1,0 +1,11 @@
+# The configuration file for all your plugin questions
+# Example Setup
+# question: 'What is the Auction House?'
+# answer: 'The Auction House is a feature that allows players to sell their unwanted items to other players for a specified price.'
+# accuracy: 70.0 # It's recommended to keep this at 70%, the higher the number the more precise the question must be for it to be detected
+questions:
+  auction_house:
+    question: 'What is the Auction House?'
+    answer:
+    - 'The Auction House is a feature that allows players to sell their unwanted items to other players for a specified price.'
+    accuracy: 70
