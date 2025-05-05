@@ -56,14 +56,28 @@ public record Question(String query, List<String> answer, double accuracy) {
         if (this.accuracy >= 100) return input.equalsIgnoreCase(this.query);
 
         // check the accuracy of the text to see if they somewhat match
+        return this.findAccuracy(input) >= this.accuracy / 100;
+    }
+
+    /**
+     * Get the accuracy of the word
+     *
+     * @param input The input to check
+     * @return The accuracy % number for the question
+     */
+    public double findAccuracy(String input) {
+        if (this.accuracy >= 100) return 100.0;
+
+        // check the accuracy of the text to see if they somewhat match
         String primary = input.toLowerCase().replace("'", "");
         String secondary = this.query.toLowerCase().replace("'", "");
         int max = Math.max(primary.length(), secondary.length());
-        if (max == 0) return false;
+        if (max == 0) return 0.0;
 
         int distance = calculate(primary, secondary);
-        return ((max - (double) distance) / max) > this.accuracy / 100;
+        return ((max - (double) distance) / max);
     }
+
 
     public StringPlaceholders placeholders() {
         return StringPlaceholders.of(

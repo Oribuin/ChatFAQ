@@ -40,10 +40,11 @@ public class ChatListener implements Listener {
             if (manager.hasAskedRecently(event.getPlayer().getUniqueId(), question)) {
                 if (Settings.PREVENT_DUPLICATE.get()) {
                     event.setCancelled(true);
-
                     locale.sendMessages(event.getPlayer(), "question-answer-duplicate", question.placeholders());
                     return;
                 }
+                
+                return; // don't do anything if they've asked recently and it wasn't the right answer
             }
 
             // mark the player as asking it recently

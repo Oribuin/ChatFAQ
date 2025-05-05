@@ -11,7 +11,10 @@ import dev.rosewood.rosegarden.manager.Manager;
 
 import java.io.File;
 import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 
@@ -62,10 +65,16 @@ public class QuestionManager extends Manager {
     public Question getMatch(String input) {
         if (this.questions.isEmpty()) return null;
 
-        return this.questions.stream()
-                .filter(x -> x.matches(input))
-                .findFirst()
-                .orElse(null);
+        Map<Question, Double> questions = new HashMap<>();
+        this.questions.forEach(x -> {
+            double accuracy = x.findAccuracy(input);
+            if (accuracy < (x.accuracy() / 100)) return;
+
+            questions.put(x, accuracy);
+        });
+
+        if (questions.isEmpty()) return null;
+        return Collections.max(questions.entrySet(), Map.Entry.comparingByValue()).getKey();
     }
 
     /**
